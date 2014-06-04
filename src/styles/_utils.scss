@@ -1,0 +1,133 @@
+/**
+*
+* Utils
+*
+* Google Web Fundamentals
+*
+* R/GA 2014
+* @author Pedro Duarte
+* @author Antoine Grelard
+*
+**/
+
+/*==========  VARIABLES  ==========*/
+
+  // Defining breakpoints
+  $medium: 620px;
+  $wide: 800px;
+  $huge: 1600px;
+  $mediumContainer: 688px;
+  $wideContainer: 864px;
+
+  // Defining colors
+  $colorText: #333333;
+  $colorHighlight: #3372df;
+  $colorWarning: yellow;
+  $colorMuted: #cccccc;
+  $colorDanger: #cc0000;
+
+
+  // Defining font family
+  $fontDefault: Helvetica, Arial, sans-serif;
+  $fontHighlight: "Roboto Condensed", Helvetica, sans-serif;
+
+  // Defining font sizes
+  $fontSmall: 13px;
+  $fontBase: 16px;
+  $fontMedium: 20px;
+  $fontLarge: 26px;
+  $fontXLarge: 42px;
+  $fontXXLarge: 68px;
+  $fontHuge: 110px;
+
+  // Defining baseline line height
+  $lineHeight: 26px;
+
+
+/*==========  FUNCTIONS  ==========*/
+
+  @function leading($size, $context: $lineHeight) {
+    @return  $context / $size + em;
+  }
+
+
+/*==========  MIXINS  ==========*/
+
+  @mixin prefixr($property, $value...) {
+    -webkit-#{$property}: $value;
+       -moz-#{$property}: $value;
+        -ms-#{$property}: $value;
+            #{$property}: $value;
+  }
+
+  @mixin media-query($media-query) {
+    @if $media-query == small {
+      @media only screen and (max-width:$medium - 1) { @content; }
+    }
+
+    @if $media-query == medium {
+      @media only screen and (min-width:$medium) { @content; }
+    }
+
+    @if $media-query == medium-only {
+      @media only screen and (min-width:$medium) and (max-width: $wide - 1) { @content; }
+    }
+
+    @if $media-query == wide {
+      @media only screen and (min-width:$wide) { @content; }
+    }
+
+    @if $media-query == huge {
+      @media only screen and (min-width:$huge) { @content; }
+    }
+  }
+
+  // Just some helpers...
+  @mixin small-only { @include media-query(small) { @content }; }
+  @mixin medium { @include media-query(medium) { @content }; }
+  @mixin medium-only { @include media-query(medium-only) { @content }; }
+  @mixin wide { @include media-query(wide) { @content }; }
+  @mixin huge { @include media-query(huge) { @content }; }
+
+
+  @mixin keyframes($animation-name){
+    @-webkit-keyframes $animation-name{
+      @content;
+    }
+
+    @-moz-keyframes $animation-name{
+      @content;
+    }
+
+    @-ms-keyframes $animation-name{
+      @content;
+    }
+
+    @keyframes $animation-name{
+      @content;
+    }
+  }
+
+
+  // Creating a mixing to inherit color from parent
+  // this is because we also need to reset it from
+  // the media query. More manageable like this.
+  @mixin color-inherit {
+    color: inherit;
+
+    @include medium {
+      color: inherit;
+    }
+  }
+
+  // Mixin for flexbox
+  @mixin flexbox {
+    display: -webkit-flex;
+    display: flex;
+
+    // If browser doens't support this - fallback to display block! Amazing!!!
+    @supports not (flex-wrap: wrap) {
+      display: block;
+    }
+
+  }

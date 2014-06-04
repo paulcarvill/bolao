@@ -1,0 +1,14 @@
+{
+	"source": "src",
+	"destination": "dest",
+	"port": 9000,
+	"testPort": 9001,
+	"defaultEnv": "dev",
+	"stageBlobUrl": "https://heinekenstage.blob.core.windows.net",
+	"BACKUP-intBlobUrl": "https://int-assets-openyourcity.heineken.com",
+	"BACKUP-int2BlobUrl": "https://int2-assets-openyourcity.heineken.com",
+	"intBlobUrl": "https://intopenyourcityheineken.blob.core.windows.net",
+	"int2BlobUrl": "https://int2openyourcityheineken.blob.core.windows.net",
+	"accBlobUrl": "http://acc-assets-openyourcity.heineken.com",
+	"prodBlobUrl": "http://assets-openyourcity.heineken.com"
+}

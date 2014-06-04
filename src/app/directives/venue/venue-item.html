@@ -1,0 +1,95 @@
+	<div ng-switch on="type">
+		<div ng-switch-when="list" class="venue-box--details">
+
+
+			<div class="venue-box--photo">
+				<p class="venue-box--photo-holder">
+					<a ng-click="onVenueClick(venue.id)" class="venue-box--photo-link">
+						<img ng-src="{{ venue.photos[0].mediumPhotoUrl }}" error-src="images/placeholder-image.png" alt="{{ venue.name }}">
+					</a>
+				</p>
+			</div>
+
+
+			<div class="venue-box--intro">
+				<h1 class="venue-box--title heading-3">
+					<a ng-click="onVenueClick(venue.id)"><span class="index">{{ index }}</span> {{ venue.name }}</a>
+				</h1>
+
+				<p class="venue-box--address">{{ venue.address }}</p>
+
+				<div class="venue-stats">
+					<p class="venue-stats--item venue-type">
+						<i class="ico ico-{{ venue.category || 'default' }}"></i>
+						<span class="venue-distance--data">{{ venue.category }}</span>
+					</p>
+
+					<p class="venue-stats--item venue-distance">
+            <a target="_blank" href="https://maps.google.com/maps?dirflg=w&saddr={{lat}},{{lng}}&daddr={{ venue.address }}">
+						  <i class="ico ico-walk"></i><span class="venue-distance--data">{{ (venue.distance / 1000) * 10 | number:0 }} mins</span>
+            </a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-switch-when="single" class="venue-box--details visual-active" ng-class="{ 'no-venue-image': !visualData }">
+
+			<div ng-if="visualData">
+				<div class="venue-visual">
+
+					<p class="venue-visual--image">
+						<img ng-src="{{ visualData.mediumPhotoUrl }}" alt="{{ visualData.venueName }}">
+					</p>
+
+					<div class="venue-overlay--user-box" ng-if="customVisualData">
+						<p class="venue-overlay--user-ico">
+							<img ng-src="{{ visualData.profileImageUrl }}" alt="{{ visualData.username }}" /></p>
+						<p class="venue-overlay--user-title">@{{ visualData.username }}</p>
+						<p class="venue-overlay--user-timestamp">{{ visualData.posted * 1000 | date:'dd/MM/yy - HH:mm' }}</p>
+					</div>
+
+					<p class="venue-overlay--image-actions" ng-click="openReportForm()" ng-if="customVisualData">
+						<i class="ico ico-flag"></i>
+					</p>
+
+					<div photo-moderation photo-id="visualData.id" close-report-form="closeReportForm()" class="venue-overlay--report-box" ng-class="{ visible: reportFormOpened }"></div>
+
+				</div>
+			</div>
+
+			<h1 class="venue-box--title heading-1" ng-class="{ customVisual: customVisualData }"><span ng-if="customVisualData">{{ 'TITLES.TITLE_PREFIX' | translate }} <br /></span>{{ venue.name }}</h1>
+			<p class="venue-box--address">{{ venue.address }}</p>
+			<p class="venue-box--see-location">
+				<a target="_blank" href="https://maps.google.com/maps?dirflg=w&saddr={{lat}},{{lng}}&daddr={{ venue.address }}">{{ 'BUTTONS.SEE_LOCATION' | translate }}</a>
+
+				<a ng-click="tweetVenue(venue.name)" class="tweet-btn"><span class="ico ico-twitter"></span></a>
+			</p>
+
+			<div class="venue-box--attrs">
+				<p class="venue-box--attrs-item">
+					<a target="_blank" href="https://maps.google.com/maps?dirflg=w&saddr={{lat}},{{lng}}&daddr={{ venue.address }}"><i class="ico ico-walk"></i><span class="">{{ (venue.distance / 1000) * 10 | number:0 }} {{ 'LABELS.MINS' | translate }}</span></a>
+				</p>
+				<p class="venue-box--attrs-item">
+					<i class="ico ico-{{ venue.category || 'default' }}"></i><span class="">{{ venue.category || 'bar'}}</span>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div ng-if="type == 'single'" class="photo-box--holder">
+		<div class="photos-box">
+			<h2 class="photos-box--title">{{ 'TITLES.LATEST_PHOTOS' | translate }}</h2>
+			<ul class="photos-box--listing">
+				<li ng-repeat="photo in venue.photos" class="photos-box--listing-item" ng-show="photo.id !== visualData.id">
+					<a ng-click="onVenuePhotoClick($event, photo.id)">
+						<img ng-src="{{ photo.thumbnailUrl }}" bh-src-responsive="[
+							[ '(min-width: 1px)', photo.thumbnailUrl  ],
+							[ '(min-width: 768px)', photo.mediumPhotoUrl ]
+						]" />
+					</a>
+				</li>
+			</ul>
+			<p class="more-photos"><a ng-click="getMorePhotos()">{{ 'BUTTONS.LOAD_PHOTOS' | translate }}</a></p>
+		</div>
+	</div>

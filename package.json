@@ -1,0 +1,31 @@
+{
+  "name": "bolao",
+  "version": "0.0.0",
+  "description": "Bolao da RGA",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:peduarte/bolao.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0",
+    "matchdep": "~0.3.0",
+    "grunt-open": "~0.2.2",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-compass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-htmlmin": "~0.1.3",
+    "grunt-usemin": "~2.0.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-cssmin": "~0.6.2",
+    "grunt-shell": "~0.5.0",
+    "connect-livereload": "0.3.0",
+    "grunt-ngmin": "0.0.3",
+    "grunt-replace": "~0.5.1",
+    "grunt-contrib-copy": "~0.4.1"
+  }
+}

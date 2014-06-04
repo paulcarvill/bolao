@@ -1,0 +1,56 @@
+
+<!-- 	<p style="position: absolute; z-index: 111; top: 0; left: 0;">{{ subWiewOpen }} aaa {{ selectedVenueId }}</p> -->
+
+
+	<div class="logo-holder">
+		<h1 id="logo" class="simple"><a ng-click="trackClick('landing', 'Where Next Page', 'Click Heineken Logo')">Heineken - Open Your City</a></h1>
+	</div>
+
+	<!-- I'm guessing this is for JS-disabled browsers -->
+	<div class="no-service content-holder">
+		<h1 class="logo"><a href="/">Heineken - Open Your City</a></h1>
+		<noscript>
+			<h1 class="heading-3 no-service--title no-js-title">Enable Javascript to continue !</h1>
+		</noscript>
+		<h1 class="heading-3 no-service--title no-geo-title" translate>{{ 'NO_DATA.NO_GEOLOCATION' }}</h1>
+	</div>
+
+	<div class="map-box">
+		<div map data-markers="markersData" data-event-data="eventData" data-type="{{ currentView }}" data-state="mapState" data-locale="currentLocale" data-current-selected-id="selectedVenueId"></div>
+	</div>
+
+	<ul class="categories-listing" ng-class="{ noinsider: !displayInsider }">
+		<li class="categories-listing--item">
+			<a class="categories-listing--item-link" ui-sref="home.venues" ng-class="{ selected: venuesTabActive }">
+				<i class="ico ico-venues"></i>
+				<span class="categories--item-title">{{ 'TABS.1' | translate }}</span>
+			</a>
+		</li>
+		<li class="categories-listing--item">
+			<a class="categories-listing--item-link" ng-click="trackClick('home.activity', 'Where Next Page', 'Click on Activity')" ng-class="{ selected: activityTabActive }">
+				<i class="ico ico-activity"></i>
+				<span class="categories--item-title">{{ 'TABS.2' | translate }}</span>
+			</a>
+		</li>
+		<li class="categories-listing--item" ng-class="{ hidden: !displayInsider }">
+			<a class="categories-listing--item-link" ng-click="trackClick('home.insider', 'Where Next Page', 'Click on Insider')" ng-class="{ selected: insiderTabActive }">
+				<i class="ico ico-insider"></i>
+				<span class="categories--item-title">{{ 'TABS.3' | translate }}</span>
+			</a>
+		</li>
+	</ul>
+
+
+	<div class="views">
+		<div class="views--top-view" ng-class="{ 'view--selected': venuesTabActive || subWiewOpen }">
+			<div ui-view="view--venues"></div>
+		</div>
+		<div class="views--top-view" ng-class="{ 'view--selected': activityTabActive }">
+			<div ui-view="view--photos"></div>
+		</div>
+		<div class="views--top-view" ng-class="{ 'view--selected': insiderTabActive }">
+			<div ui-view="view--insider"></div>
+		</div>
+
+		<div class="views--loader" ng-show="contentLoading"></div>
+	</div>

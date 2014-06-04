@@ -1,0 +1,55 @@
+<!doctype html>
+<!--[if IE 8]><html lang="en" class="no-js oldie ie8" ng-app="BolaoApp" ng-controller="MainController"> <![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js oldie ie9" ng-app="BolaoApp" ng-controller="MainController"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-js" ng-app="BolaoApp" ng-controller="MainController"> <!--<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, minimal-ui">
+
+		<!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+		<title>Bolao</title>
+
+		<!-- build:css({src,dest}) css/main.min.css -->
+		<link rel="stylesheet" href="vendors/normalize-css/normalize.css">
+		<link rel="stylesheet" href="css/main.css">
+		<!-- endbuild-->
+
+
+    <!-- <link rel="apple-touch-icon" href="images/ios-icon.png"> -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Bolao R/GA">
+	</head>
+
+	<body>
+
+
+    <ul ng-repeat="match in matches">
+      <li class="match">
+        <p>{{ match.city }} - {{ match.stadium }}</p>
+        <p>{{ match.date }} - {{ match.time }}</p>
+        <p>Group {{ match.group }}</p>
+        <p>{{ match.homeTeam }} <input type="text" ng-model="match.homeScore"> - <input type="text" ng-model="match.awayScore"> {{ match.awayTeam }}</p>
+      </li>
+    </ul>
+
+    <button ng-click="save()">Submit scores</button>
+
+
+		<!-- build:js js/main.min.js -->
+		<script src="vendors/fastclick/lib/fastclick.js"></script>
+		<script src="vendors/angular/angular.js"></script>
+		<script src="vendors/angular-ui-router/release/angular-ui-router.js"></script>
+
+		<script src="app/app.js"></script>
+
+		<script src="app/services/dataService.js"></script>
+
+		<script src="app/directives/venue/venue-directive.js"></script>
+
+		<script src="app/pages/home/home-page.js"></script>
+		<!-- endbuild-->
+
+	</body>
+</html>
