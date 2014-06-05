@@ -15,3 +15,39 @@
 body {
 
 }
+
+.match {
+  display: inline-block;
+}
+
+
+.probabilities {
+  overflow: hidden;
+
+  height: 10px;
+
+  span {
+    float: left;
+    height: 100%;
+    background: #ccc;
+  }
+
+  .prob-win {
+    background-color: blue;
+  }
+
+  .prob-draw {
+    background-color: gray;
+  }
+
+  .prob-lose {
+    background-color: red;
+  }
+}
+
+.points {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+}

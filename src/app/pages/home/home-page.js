@@ -9,19 +9,33 @@
 				url: '/',
 				templateUrl: 'app/pages/home/home-page.html',
 				controller: 'HomeController',
-				abstract: true,
-				resolve: {
-					'ageVerified': ['setupService', function (setupService) {
-						return setupService.isAgeVerified();
-					}]
-				}
 			});
 
 	})
 
-	.controller('HomeController', function() {
+	.controller('HomeController', function($scope, $state, dataService) {
 
+    // default login email
+    $scope.email = 'pedro@rga.com';
 
+    $scope.validateEmail = function () {
+
+      dataService.validateEmail($scope.email).then(function (responseData) {
+        console.log('responseData -> ', responseData);
+
+        if (responseData.isValid) {
+          console.log('Valid email -> ');
+          $state.go('round-of-16');
+        }
+
+        if (responseData.matchesData) {
+          dataService.storeUserData(responseData.matchesData);
+        }
+
+        return false;
+      });
+
+    };
 
 	});
 

@@ -25,21 +25,12 @@
 	<body>
 
 
-    <ul ng-repeat="match in matches">
-      <li class="match">
-        <p>{{ match.city }} - {{ match.stadium }}</p>
-        <p>{{ match.date }} - {{ match.time }}</p>
-        <p>Group {{ match.group }}</p>
-        <p>{{ match.homeTeam }} <input type="text" ng-model="match.homeScore"> - <input type="text" ng-model="match.awayScore"> {{ match.awayTeam }}</p>
-      </li>
-    </ul>
-
-    <button ng-click="save()">Submit scores</button>
+    <div ui-view></div>
 
 
 		<!-- build:js js/main.min.js -->
 		<script src="vendors/fastclick/lib/fastclick.js"></script>
-		<script src="vendors/angular/angular.js"></script>
+    <script src="vendors/angular/angular.js"></script>
 		<script src="vendors/angular-ui-router/release/angular-ui-router.js"></script>
 
 		<script src="app/app.js"></script>
@@ -48,7 +39,8 @@
 
 		<script src="app/directives/venue/venue-directive.js"></script>
 
-		<script src="app/pages/home/home-page.js"></script>
+    <script src="app/pages/home/home-page.js"></script>
+		<script src="app/pages/round-of-16/round-of-16-page.js"></script>
 		<!-- endbuild-->
 
 	</body>

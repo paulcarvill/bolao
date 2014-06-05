@@ -1,0 +1,27 @@
+
+  <h1>Round of 16</h1>
+
+  <form action="#" class"round-of-16-form" ng-submit="save()">
+    <ul ng-repeat="match in matches">
+      <li class="match">
+        <p>{{ match.city }} - {{ match.stadium }}</p>
+        <p>{{ match.date }} - {{ match.time }}</p>
+        <p>Group {{ match.group }}</p>
+        <p>{{ match.homeTeam }} <input type="text" ng-model="match.homeScore" ng-disabled="dataSubmitted"> - <input type="text" ng-model="match.awayScore" ng-disabled="dataSubmitted"> {{ match.awayTeam }}</p>
+
+
+        <div class="probabilities">
+          <span class="prob-win" style="width: {{ match.probWin }}%"></span>
+          <span class="prob-draw" style="width: {{ match.probDraw }}%"></span>
+          <span class="prob-lose" style="width: {{ match.probLose }}%"></span>
+        </div>
+
+      </li>
+    </ul>
+
+    <button ng-if="!dataSubmitted">Submit scores</button>
+  </form>
+
+  <div class="points">
+    {{ points }}
+  </div>
