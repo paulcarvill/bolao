@@ -70,7 +70,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Croatia',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'13/06/2014',
@@ -81,7 +84,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Cameroon',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'13/06/2014',
@@ -92,7 +98,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Netherlands',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'13/06/2014',
@@ -103,7 +112,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Australia',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'14/06/2014',
@@ -114,7 +126,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Greece',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'14/06/2014',
@@ -125,7 +140,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Costa Rica',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'14/06/2014',
@@ -136,7 +154,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Italy',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'14/06/2014',
@@ -147,7 +168,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Japan',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'15/06/2014',
@@ -158,7 +182,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Ecuador',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'15/06/2014',
@@ -169,7 +196,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Honduras',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'15/06/2014',
@@ -180,7 +210,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Bosnia and Herzegovina',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'16/06/2014',
@@ -191,7 +224,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Portugal',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'16/06/2014',
@@ -202,7 +238,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Nigeria',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'16/06/2014',
@@ -213,7 +252,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'USA',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'17/06/2014',
@@ -224,7 +266,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Algeria',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'17/06/2014',
@@ -235,7 +280,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Mexico',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'17/06/2014',
@@ -246,7 +294,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Korea Republic',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'18/06/2014',
@@ -257,7 +308,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Netherlands',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'18/06/2014',
@@ -268,7 +322,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Chile',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'18/06/2014',
@@ -279,7 +336,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Croatia',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'19/06/2014',
@@ -290,7 +350,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Côte D\'Ivoire',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'19/06/2014',
@@ -301,7 +364,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'England',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'19/06/2014',
@@ -312,7 +378,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Greece',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'20/06/2014',
@@ -323,7 +392,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Costa Rica',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'20/06/2014',
@@ -334,7 +406,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'France',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'20/06/2014',
@@ -345,7 +420,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Ecuador',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'21/06/2014',
@@ -356,7 +434,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Iran',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'21/06/2014',
@@ -367,7 +448,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Ghana',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'21/06/2014',
@@ -378,7 +462,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Bosnia and Herzegovina',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'22/06/2014',
@@ -389,7 +476,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Russia',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'22/06/2014',
@@ -400,7 +490,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Algeria',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'22/06/2014',
@@ -411,7 +504,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Portugal',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'23/06/2014',
@@ -422,7 +518,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Chile',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'23/06/2014',
@@ -433,7 +532,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Spain',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'23/06/2014',
@@ -444,7 +546,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Brazil',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'23/06/2014',
@@ -455,7 +560,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Mexico',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'24/06/2014',
@@ -466,7 +574,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Uruguay',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'24/06/2014',
@@ -477,7 +588,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'England',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'24/06/2014',
@@ -488,7 +602,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Colombia',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'24/06/2014',
@@ -499,7 +616,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Côte D\'Ivoire',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'25/06/2014',
@@ -510,7 +630,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Argentina',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'25/06/2014',
@@ -521,7 +644,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Iran',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'25/06/2014',
@@ -532,7 +658,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Switzerland',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'25/06/2014',
@@ -543,7 +672,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'France',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'26/06/2014',
@@ -554,7 +686,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Ghana',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'26/06/2014',
@@ -565,7 +700,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Germany',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'26/06/2014',
@@ -576,7 +714,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Belgium',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           },
           {
             date:'26/06/2014',
@@ -587,7 +728,10 @@
             homeScore: generateRandomScore(),
             awayTeam:'Russia',
             awayScore: generateRandomScore(),
-            group:'D'
+            group:'D',
+            probWin: 50,
+            probDraw: 30,
+            probLose: 20
           }
         ];
 

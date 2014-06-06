@@ -15,6 +15,7 @@
   .controller('Round16Controller', function($scope, dataService) {
 
     // Global matches object
+    var _MASTERDATA;
     $scope.matches = [];
 
     // Function to create some aliases based
@@ -34,9 +35,9 @@
       return match;
     }
 
-    function calculatePoints (userData) {
-      console.log('Calculating points... userData -> ', userData);
-    }
+    /*function calculatePoints () {
+      console.log('Calculating points... userData -> ', $scope.matches);
+    }*/
 
     // Get data from google spreadsheet
     dataService.getData().then(function(data) {
@@ -50,21 +51,25 @@
         $scope.matches.push(createMatchObject(matchesData[i]));
       }
 
+      _MASTERDATA = $scope.matches;
+
       // Check if the user has already submitted
       // their matches scores
       if (dataService.getUserData()) {
         $scope.dataSubmitted = true;
-        calculatePoints(dataService.getUserData());
+        angular.extend($scope.matches, dataService.getUserData());
+        // calculatePoints(dataService.getUserData());
       }
     });
 
     $scope.save = function () {
       dataService.postData($scope.matches).then(function(responseData) {
         $scope.dataSubmitted = true;
+        // calculatePoints();
         angular.extend($scope.matches, responseData);
-        calculatePoints(responseData);
         return false;
       });
+      return false;
     };
 
   });

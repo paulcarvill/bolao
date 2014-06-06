@@ -26,14 +26,17 @@
         if (responseData.isValid) {
           console.log('Valid email -> ');
           $state.go('round-of-16');
+        } else {
+          console.log('Invalid email -> ');
         }
 
         if (responseData.matchesData) {
           dataService.storeUserData(responseData.matchesData);
         }
 
-        return false;
       });
+
+      return false;
 
     };
 
