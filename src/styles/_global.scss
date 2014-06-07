@@ -46,10 +46,33 @@ body {
   background: #E51837;
 }
 
+
+
 /*==========  MAIN HEADER  ==========*/
-.main-header__subtitle {
-  // display: inline-block;
-  vertical-align: middle;
+
+
+
+/*==========  LOGIN  ==========*/
+
+.login-form {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.login-form__input {
+  display: block;
+  width: 100%;
+  margin: 0 0 10px;
+  line-height: 26px;
+}
+
+.login-form__submit {
+  display: block;
+  width: 100%;
+}
+
+.login-form__invalid-email {
+  text-align: left;
 }
 
 
@@ -106,8 +129,6 @@ body {
     content: "+3";
   }
 }
-
-
 
 
 /*==========  PROBABILITIES  ==========*/

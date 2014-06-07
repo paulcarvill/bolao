@@ -6,8 +6,8 @@
     <input type="text" class="match__score-field" ng-model="matchData.homeScore" ng-disabled="dataSubmitted"> -
     <input type="text" class="match__score-field" ng-model="matchData.awayScore" ng-disabled="dataSubmitted"> {{ matchData.awayTeam }}
   </p>
-  <p>Actual score: {{ matchData.actualHomeScore }} - {{ matchData.actualAwayScore }}</p>
 
+  <p ng-show="matchData.actualHomeScore >= 0 && matchData.actualAwayScore >= 0">Actual score: {{ matchData.actualHomeScore }} - {{ matchData.actualAwayScore }}</p>
 
   <div class="probabilities">
     <span class="prob-win" style="width: {{ matchData.probWin }}%"></span>

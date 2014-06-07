@@ -2,7 +2,7 @@
   <h1>Login</h1>
 
   <form class="login-form" ng-submit="validateEmail()">
-    <p ng-show="invalidEmail">Invalid email</p>
-    <input type="email" placeholder="Enter your R/GA email address" ng-model="email">
-    <button>Login</button>
+    <p class="login-form__invalid-email" ng-show="invalidEmail">This email address is not registered. Contact <a href="#">Pedro</a>, <a href="#">Dan Van</a> or <a href="#">Galvo</a></p>
+    <input type="email" placeholder="Enter your R/GA email address" ng-model="email" class="login-form__input" required>
+    <button class="login-form__submit">Login</button>
   </form>
