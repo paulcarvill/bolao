@@ -1,0 +1,144 @@
+/**
+*
+* Global
+*
+* Bolao
+*
+* R/GA 2014
+* @author Pedro Duarte
+*
+**/
+
+* {
+  @include prefixr(box-sizing, border-box);
+}
+
+html, body, button {
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+body {
+  font-family: $fontDefault;
+  font-size: $fontBase;
+  line-height: 26px;
+  color: $colorText;
+  text-align: center;
+}
+
+.rga-logo {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 16px;
+  font-size: 21px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.rga-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0;
+  height: 0;
+  padding: 15px 15px 0 0;
+  background: #E51837;
+}
+
+/*==========  MAIN HEADER  ==========*/
+.main-header__subtitle {
+  // display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+
+/*==========  MATCH ITEM  ==========*/
+
+.matches-list {
+  padding: 0;
+  list-style: none;
+}
+
+.match-item {
+  border: 1px solid #eee;
+  display: inline-block;
+}
+
+.match {
+  padding: 26px;
+  position: relative;
+}
+
+.match__score-field {
+  width: 40px;
+  text-align: center;
+}
+
+
+.match--wrong,
+.match--correct,
+.match--exact {
+  &:after {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+
+.match--wrong {
+  &:after {
+    content: "0";
+  }
+}
+
+.match--correct {
+  &:after {
+    content: "+1";
+  }
+}
+
+.match--exact {
+  &:after {
+    content: "+3";
+  }
+}
+
+
+
+
+/*==========  PROBABILITIES  ==========*/
+
+.probabilities {
+  overflow: hidden;
+
+  height: 10px;
+
+  span {
+    float: left;
+    height: 100%;
+    background: #ccc;
+  }
+
+  .prob-win {
+    background-color: blue;
+  }
+
+  .prob-draw {
+    background-color: gray;
+  }
+
+  .prob-lose {
+    background-color: red;
+  }
+}
+
+.points {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+}

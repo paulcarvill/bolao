@@ -7,6 +7,7 @@
 
 		var dataUrl = 'https://spreadsheets.google.com/feeds/list/1cYYbop7mOM153UWLCbIzKHfigrBAamHLfxFqleTpHag/od6/public/values?alt=json-in-script';
     var userData;
+    var userVerified;
 
 		var validateResponse = function (response) {
 			if (response.status === 200) {
@@ -26,7 +27,7 @@
 		};
 
     var generateRandomScore = function () {
-      return Math.floor(Math.random() * 4) + 1;
+      return Math.floor(Math.random() * 3) + 0;
     };
 
 
@@ -58,6 +59,22 @@
         return userData;
       },
 
+      resetUserData: function () {
+        userData = null;
+      },
+
+      verifyUser: function () {
+        userVerified = true;
+      },
+
+      isUserVerified: function () {
+        return userVerified;
+      },
+
+      resetUserVerification: function () {
+        userVerified = false;
+      },
+
       validateEmail: function (email) {
 
         var fakeUserData = [
@@ -67,9 +84,9 @@
             city:'Sāo Paulo',
             stadium:'Arena Corinthians',
             homeTeam:'Brazil',
-            homeScore: generateRandomScore(),
+            homeScore: 1,
             awayTeam:'Croatia',
-            awayScore: generateRandomScore(),
+            awayScore: 1,
             group:'D',
             probWin: 50,
             probDraw: 30,
@@ -81,9 +98,9 @@
             city:'Natal',
             stadium:'Estadio das Dunas',
             homeTeam:'Mexico',
-            homeScore: generateRandomScore(),
+            homeScore: 0,
             awayTeam:'Cameroon',
-            awayScore: generateRandomScore(),
+            awayScore: 0,
             group:'D',
             probWin: 50,
             probDraw: 30,
@@ -95,9 +112,9 @@
             city:'Salvador',
             stadium:'Arena Fonte Nova',
             homeTeam:'Spain',
-            homeScore: generateRandomScore(),
+            homeScore: 2,
             awayTeam:'Netherlands',
-            awayScore: generateRandomScore(),
+            awayScore: 1,
             group:'D',
             probWin: 50,
             probDraw: 30,

@@ -5,39 +5,39 @@
 
 	.config(function($stateProvider) {
 		$stateProvider
-			.state('home', {
+			.state('login', {
 				url: '/',
-				templateUrl: 'app/pages/home/home-page.html',
-				controller: 'HomeController',
+				templateUrl: 'app/pages/login/login-page.html',
+				controller: 'LoginController',
 			});
 
 	})
 
-	.controller('HomeController', function($scope, $state, dataService) {
+	.controller('LoginController', function($scope, $state, dataService) {
+
+    $scope.invalidEmail = false;
 
     // default login email
-    $scope.email = 'pedro@rga.com';
+    // TO BE REMOVED!
+    // $scope.email = 'pedro@rga.com';
 
     $scope.validateEmail = function () {
-
       dataService.validateEmail($scope.email).then(function (responseData) {
         console.log('responseData -> ', responseData);
 
         if (responseData.isValid) {
-          console.log('Valid email -> ');
-          $state.go('round-of-16');
+          dataService.verifyUser();
+          $state.go('round-of-16', {email:$scope.email});
         } else {
-          console.log('Invalid email -> ');
+          $scope.invalidEmail = true;
         }
 
         if (responseData.matchesData) {
           dataService.storeUserData(responseData.matchesData);
         }
-
       });
 
       return false;
-
     };
 
 	});
