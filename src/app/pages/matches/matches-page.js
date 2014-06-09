@@ -5,14 +5,14 @@
 
   .config(function($stateProvider) {
     $stateProvider
-      .state('round-of-16', {
-        url: '/round-of-16/:email',
-        templateUrl: 'app/pages/round-of-16/round-of-16-page.html',
-        controller: 'Round16Controller'
+      .state('matches', {
+        url: '/matches/:email',
+        templateUrl: 'app/pages/matches/matches-page.html',
+        controller: 'MatchesController'
       });
   })
 
-  .controller('Round16Controller', function($scope, $state, dataService) {
+  .controller('MatchesController', function($scope, $state, dataService) {
 
     // This will store the raw data from google spreadsheet
     // and is not exposed to the view

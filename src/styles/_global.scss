@@ -98,6 +98,12 @@ body {
 .match__score-field {
   width: 40px;
   text-align: center;
+  border: none;
+  border: 1px solid #ccc;
+
+  &:disabled {
+    background: #eee;
+  }
 }
 
 
@@ -115,18 +121,21 @@ body {
 .match--wrong {
   &:after {
     content: "0";
+    color: red;
   }
 }
 
 .match--correct {
   &:after {
     content: "+1";
+    color: green;
   }
 }
 
 .match--exact {
   &:after {
     content: "+3";
+    color: blue;
   }
 }
 
@@ -136,7 +145,7 @@ body {
 .probabilities {
   overflow: hidden;
 
-  height: 10px;
+  height: 4px;
 
   span {
     float: left;

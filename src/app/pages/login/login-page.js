@@ -17,7 +17,7 @@
 
     $scope.invalidEmail = false;
 
-    // default login email
+    // default login email for testing
     // TO BE REMOVED!
     // $scope.email = 'pedro@rga.com';
 
@@ -27,7 +27,7 @@
 
         if (responseData.isValid) {
           dataService.verifyUser();
-          $state.go('round-of-16', {email:$scope.email});
+          $state.go('matches', {email: $scope.email});
         } else {
           $scope.invalidEmail = true;
         }
