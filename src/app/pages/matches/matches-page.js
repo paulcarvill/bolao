@@ -12,7 +12,7 @@
       });
   })
 
-  .controller('MatchesController', function($scope, $state, dataService) {
+  .controller('MatchesController', function($rootScope, $scope, $state, dataService) {
 
     // This will store the raw data from google spreadsheet
     // and is not exposed to the view
@@ -33,9 +33,9 @@
       match.city = data.gsx$city.$t;
       match.stadium = data.gsx$stadium.$t;
       match.homeTeam = data.gsx$hometeam.$t;
-      match.homeScore = resetScores ? 0 : data.gsx$homescore.$t;
+      match.homeScore = resetScores ? '-' : data.gsx$homescore.$t;
       match.awayTeam = data.gsx$awayteam.$t;
-      match.awayScore = resetScores ? 0 : data.gsx$awayscore.$t;
+      match.awayScore = resetScores ? '-' : data.gsx$awayscore.$t;
       match.group = data.gsx$group.$t;
 
       return match;
@@ -97,7 +97,6 @@
           }
         }
 
-
         // Check if the user has already submitted
         // their matches scores
         if (dataService.getUserData()) {
@@ -106,9 +105,15 @@
           // in this case, we set $scope.matches to be the users data
           // as this is what is bound with our views
           $scope.matches = dataService.getUserData();
-          $scope.dataSubmitted = true;
-          calculatePoints();
+
+          // Check whether the worldcup has already started
+          if ($rootScope.worldCupStarted) {
+            $scope.dataSubmitted = true;
+            calculatePoints();
+          }
         }
+
+        console.log('$scope.matches -> ', $scope.matches);
       });
     }
 
@@ -119,7 +124,8 @@
         $scope.loading = false;
         $scope.dataSubmitted = true;
         angular.extend($scope.matches, responseData);
-        // calculatePoints();
+      }, function() {
+        console.log('error -> ');
       });
       return false;
     };
@@ -136,14 +142,14 @@
         getMatchesData();
       } else {
         dataService.validateEmail($state.params.email).then(function (responseData) {
-          if (responseData.isValid) {
-            if (responseData.matchesData) {
-              dataService.storeUserData(responseData.matchesData);
-            }
-            getMatchesData();
-          } else {
-            $state.go('login');
+          responseData = responseData.data;
+          if (typeof responseData === 'object') {
+            dataService.storeUserData(responseData);
           }
+          getMatchesData();
+        }, function (error) {
+          console.log('Invalid email -> ', error);
+          $state.go('login');
         });
       }
     } else {

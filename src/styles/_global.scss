@@ -24,6 +24,33 @@ body {
   line-height: 26px;
   color: $colorText;
   text-align: center;
+  background: #e7e7e7;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: #0f9d58;
+  border: none;
+  border-bottom: 5px solid #0b6e3e;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px 112px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:hover {
+    background-color: #0b6e3e;
+  }
+}
+
+.logo {
+  display: block;
+  margin: 65px auto 15px;
 }
 
 .rga-logo {
@@ -49,7 +76,13 @@ body {
 
 
 /*==========  MAIN HEADER  ==========*/
-
+.main-header {
+  h1 {
+    font-size: 24px;
+    color: #d64545;
+    text-transform: uppercase;
+  }
+}
 
 
 /*==========  LOGIN  ==========*/
@@ -83,30 +116,69 @@ body {
 .matches-list {
   padding: 0;
   list-style: none;
-  max-width: 400px;
-  margin: 0 auto;
+  margin: 60px auto 0;
+  overflow: hidden;
+  padding: 0 40px;
 }
 
 .match-item {
-  border: 1px solid #eee;
+  margin: 26px 0 60px;
+  float: left;
+  width: 33.3%;
+  position: relative;
+}
+
+.match__date {
   display: inline-block;
-  margin: 26px 0 0;
+  color: #0f9d58;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
 }
 
 .match {
-  padding: 26px;
+  background: #ffffff;
+  border-bottom: 4px solid #d3d3d3;
+  margin: 0 10px;
+  padding: 60px 10px 0;
+  position: relative;
+}
+
+.match__score {
+  float: left;
+  width: 50%;
+  padding: 0 20px 120px;
   position: relative;
 }
 
 .match__score-field {
-  width: 40px;
+  width: 100%;
   text-align: center;
   border: none;
-  border: 1px solid #ccc;
+  border-bottom: 5px solid #f4c900;
+  color: #0f9d58;
+  font-size: 160px;
 
-  &:disabled {
-    background: #eee;
+  &:focus {
+    outline: none;
   }
+
+}
+
+.match__label {
+  display: block;
+  font-size: 20px;
+  color: darken(#e3e3e3, 5%);
+  text-transform: uppercase;
+  font-weight: 900;
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 
@@ -174,4 +246,54 @@ body {
   top: 20px;
   right: 20px;
   font-size: 24px;
+}
+
+
+/*==========  FLAGS  ==========*/
+
+.flag {
+  display: inline-block;
+  width: $flagSize;
+  height: $flagSize;
+  background: url(../images/sprite-alphabetical.gif) repeat 0 0;
+  background-size: $flagSize 2816px;
+}
+
+@each $country in $countries {
+  $i:0 !default;
+  .flag--#{$country} {
+    background-position: 0 $i*$flagSize;
+  }
+  $i:$i+1;
+}
+
+
+
+.clear {
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+  &:after {
+    clear:both;
+  }
+}
+
+
+/*==========  FOOTER  ==========*/
+.main-footer {
+  border-top: 1px solid darken(#e3e3e3, 30%);
+  margin-top: 60px;
+  padding: 30px 0 30px;
+  font-size: 14px;
+
+  &,
+  a {
+    color: darken(#e3e3e3, 30%);
+  }
+
+  a:hover {
+    color: #333;
+  }
 }

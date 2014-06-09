@@ -23,18 +23,19 @@
 
     $scope.validateEmail = function () {
       dataService.validateEmail($scope.email).then(function (responseData) {
-        console.log('responseData -> ', responseData);
+        responseData = responseData.data;
 
-        if (responseData.isValid) {
-          dataService.verifyUser();
-          $state.go('matches', {email: $scope.email});
-        } else {
-          $scope.invalidEmail = true;
-        }
+        dataService.verifyUser();
+        $state.go('matches', {email: $scope.email});
 
-        if (responseData.matchesData) {
-          dataService.storeUserData(responseData.matchesData);
+        // assume that if it's an object the user has already submitted data
+        if (typeof responseData === 'object') {
+          dataService.storeUserData(responseData);
         }
+        $scope.invalidEmail = false;
+      }, function() {
+        $scope.invalidEmail = true;
+        console.log('error -> ');
       });
 
       return false;

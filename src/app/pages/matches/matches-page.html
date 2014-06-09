@@ -1,14 +1,12 @@
 
-  <h1>Matches</h1>
-
-  <form class"round-of-16-form" ng-submit="save()">
+  <form class"matches-form" ng-submit="save()">
     <ul class="matches-list">
       <li class="match-item" ng-repeat="match in matches">
-        <div match match-data="match" disabled="dataSubmitted"></div>
+        <div match match-data="match" disabled="worldCupStarted"></div>
       </li>
     </ul>
 
-    <button ng-if="!dataSubmitted" ng-disabled="loading">Submit scores</button>
+    <button ng-if="!worldCupStarted" ng-disabled="worldCupStarted">Submit scores</button>
   </form>
 
   <div ng-show="points" class="points">

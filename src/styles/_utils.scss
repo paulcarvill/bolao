@@ -42,6 +42,9 @@
   // Defining baseline line height
   $lineHeight: 26px;
 
+  $flagSize: 88px;
+  $countries: "uruguay", "mexico", "algeria", "cameroon", "ivory-coast", "ghana", "nigeria", "australia", "iran", "japan", "korea", "belgium", "bosnia", "croatia", "france", "germany", "greece", "italy", "netherlands", "portugal", "russia", "spain", "switzerland", "costa-rica", "hondura", "usa", "argentina", "brazil", "chile", "colombia", "ecuador", "england";
+
 
 /*==========  FUNCTIONS  ==========*/
 
@@ -51,6 +54,7 @@
 
 
 /*==========  MIXINS  ==========*/
+
 
   @mixin prefixr($property, $value...) {
     -webkit-#{$property}: $value;
