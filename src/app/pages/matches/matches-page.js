@@ -23,6 +23,8 @@
     $scope.matches = [];
     $scope.points = 0;
     $scope.dataSubmitted = false;
+    $scope.fetchingData = true;
+    $scope.sendingData = false;
 
     // Function to create some aliases based
     // on the JSON received from Google spreadsheet
@@ -108,22 +110,23 @@
 
           // Check whether the worldcup has already started
           if ($rootScope.worldCupStarted) {
-            $scope.dataSubmitted = true;
             calculatePoints();
           }
         }
 
-        console.log('$scope.matches -> ', $scope.matches);
+        // stop the loader...
+        $scope.fetchingData = false;
       });
     }
 
     // Public method, available from the view
     $scope.save = function () {
-      $scope.loading = true;
+      $scope.sendingData = true;
       dataService.postData($state.params.email, $scope.matches).then(function(responseData) {
-        $scope.loading = false;
+        $scope.sendingData = false;
         $scope.dataSubmitted = true;
         angular.extend($scope.matches, responseData);
+        window.scrollTo(0, 0);
       }, function() {
         console.log('error -> ');
       });

@@ -13,21 +13,15 @@
 
   // Defining breakpoints
   $medium: 620px;
-  $wide: 800px;
+  $wide: 900px;
   $huge: 1600px;
-  $mediumContainer: 688px;
-  $wideContainer: 864px;
 
   // Defining colors
   $colorText: #333333;
-  $colorHighlight: #3372df;
-  $colorWarning: yellow;
-  $colorMuted: #cccccc;
-  $colorDanger: #cc0000;
 
 
   // Defining font family
-  $fontDefault: Helvetica, Arial, sans-serif;
+  $fontDefault: "HelveticaNeue-CondensedBold", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;
   $fontHighlight: "Roboto Condensed", Helvetica, sans-serif;
 
   // Defining font sizes
@@ -43,7 +37,7 @@
   $lineHeight: 26px;
 
   $flagSize: 88px;
-  $countries: "uruguay", "mexico", "algeria", "cameroon", "ivory-coast", "ghana", "nigeria", "australia", "iran", "japan", "korea", "belgium", "bosnia", "croatia", "france", "germany", "greece", "italy", "netherlands", "portugal", "russia", "spain", "switzerland", "costa-rica", "hondura", "usa", "argentina", "brazil", "chile", "colombia", "ecuador", "england";
+  $countries: "algeria" "argentina" "australia" "belgium" "bosnia" "brazil" "cameroon" "chile" "colombia" "costa-rica" "croatia" "ecuador" "england" "france" "germany" "ghana" "greece" "hondura" "iran" "italy" "ivory-coast" "japan" "korea" "mexico" "netherlands" "nigeria" "portugal" "russia" "spain" "switzerland" "uruguay" "usa";
 
 
 /*==========  FUNCTIONS  ==========*/

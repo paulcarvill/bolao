@@ -22,6 +22,8 @@
     // $scope.email = 'pedro@rga.com';
 
     $scope.validateEmail = function () {
+      $scope.loading = true;
+
       dataService.validateEmail($scope.email).then(function (responseData) {
         responseData = responseData.data;
 
@@ -33,8 +35,10 @@
           dataService.storeUserData(responseData);
         }
         $scope.invalidEmail = false;
+        $scope.loading = false;
       }, function() {
         $scope.invalidEmail = true;
+        $scope.loading = false;
         console.log('error -> ');
       });
 

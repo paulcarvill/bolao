@@ -13,7 +13,7 @@
   @include prefixr(box-sizing, border-box);
 }
 
-html, body, button {
+html, body, button, input {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
@@ -38,19 +38,34 @@ button {
   border-bottom: 5px solid #0b6e3e;
   font-size: 16px;
   font-weight: bold;
-  padding: 20px 112px;
+  padding: 20px 30px;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
 
+  @include medium {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
   &:hover {
     background-color: #0b6e3e;
+  }
+
+  &:disabled {
+    background-color: #666;
+    border-color: #666;
   }
 }
 
 .logo {
   display: block;
-  margin: 65px auto 15px;
+  margin: 30px auto 15px;
+
+  @include medium {
+    margin-top: 65px;
+    margin-bottom: 65px;
+  }
 }
 
 .rga-logo {
@@ -77,6 +92,12 @@ button {
 
 /*==========  MAIN HEADER  ==========*/
 .main-header {
+  padding-bottom: 10px;
+
+  @include medium {
+    padding-bottom: 60px;
+  }
+
   h1 {
     font-size: 24px;
     color: #d64545;
@@ -89,13 +110,13 @@ button {
 
 .login-form {
   max-width: 620px;
-  margin: 0 auto 120px;
+  margin: 30px auto 120px;
 }
 
 .login-form__input {
   display: block;
   width: 100%;
-  margin: 60px 0 10px;
+  margin: 10px 0 10px;
   line-height: 26px;
   border: none;
   padding: 10px;
@@ -119,16 +140,36 @@ button {
 .matches-list {
   padding: 0;
   list-style: none;
-  margin: 60px auto 0;
+  margin: 30px auto 0;
   overflow: hidden;
-  padding: 0 40px;
+  padding: 0 5%;
+
+  @include medium {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+  }
+
+  @include wide {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .match-item {
-  margin: 26px 0 60px;
+  margin: 30px 0 30px;
   float: left;
-  width: 33.3%;
+  // width: 33.3%;
   position: relative;
+
+  @include medium {
+    width: 50%;
+    margin-bottom: 60px;
+  }
+
+  @include wide {
+    width: 33.3%;
+  }
 }
 
 .match__date {
@@ -146,15 +187,29 @@ button {
   background: #ffffff;
   border-bottom: 4px solid #d3d3d3;
   margin: 0 10px;
-  padding: 60px 10px 0;
+  padding: 30px 10px 0;
   position: relative;
+
+  @include medium {
+    padding-top: 60px;
+  }
+
 }
 
 .match__score {
   float: left;
   width: 50%;
-  padding: 0 20px 120px;
+  padding: 0 20px 60px;
   position: relative;
+
+  @include medium {
+    padding-bottom: 90px;
+  }
+
+  @include wide {
+    padding-bottom: 120px;
+  }
+
 }
 
 .match__score-field {
@@ -163,12 +218,23 @@ button {
   border: none;
   border-bottom: 5px solid #f4c900;
   color: #0f9d58;
-  font-size: 160px;
+  font-size: 60px;
+  line-height: 100px;
+  padding: 0;
+
+  @include medium {
+    font-size: 120px;
+    line-height: 100px;
+  }
+
+  @include wide {
+    font-size: 160px;
+    line-height: 160px;
+  }
 
   &:focus {
     outline: none;
   }
-
 }
 
 .match__label {
@@ -178,10 +244,18 @@ button {
   text-transform: uppercase;
   font-weight: 900;
   position: absolute;
-  top: 300px;
   left: 0;
   width: 100%;
   text-align: center;
+  top: 210px;
+
+  @include medium {
+    top: 260px;
+  }
+
+  @include wide {
+    top: 300px;
+  }
 }
 
 
@@ -265,7 +339,7 @@ button {
 @each $country in $countries {
   $i:0 !default;
   .flag--#{$country} {
-    background-position: 0 $i*$flagSize;
+    background-position: 0 (-($i*$flagSize));
   }
   $i:$i+1;
 }
@@ -286,7 +360,7 @@ button {
 
 /*==========  FOOTER  ==========*/
 .main-footer {
-  border-top: 1px solid darken(#e3e3e3, 30%);
+  border-top: 1px solid darken(#e3e3e3, 20%);
   margin-top: 60px;
   padding: 30px 0 30px;
   font-size: 14px;

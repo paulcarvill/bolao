@@ -1,4 +1,7 @@
 
+  <div class="loading" ng-show="fetchingData">Fetching data...</div>
+
+
   <form class"matches-form" ng-submit="save()">
     <ul class="matches-list">
       <li class="match-item" ng-repeat="match in matches">
@@ -6,7 +9,7 @@
       </li>
     </ul>
 
-    <button ng-if="!worldCupStarted" ng-disabled="worldCupStarted">Submit scores</button>
+    <button ng-if="!worldCupStarted" ng-disabled="sendingData"><span ng-show="!sendingData">Samba & Submit</span><span ng-show="sendingData">Submitting...</span></button>
   </form>
 
   <div ng-show="points" class="points">

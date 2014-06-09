@@ -1,15 +1,16 @@
+
 <div class="match match--{{ matchData.prediction }} clear">
   <span class="match__date">{{ matchData.date }}</span>
 
   <div class="match__score match__score--home">
     <i class="flag flag--{{ matchData.homeTeam | lowercase }}"></i>
-    <input type="text" class="match__score-field" ng-model="matchData.homeScore" ng-disabled="dataSubmitted">
+    <input type="text" class="match__score-field" ng-model="matchData.homeScore"  ng-disabled="dataSubmitted">
     <label class="match__label">{{ matchData.homeTeam }}</label>
   </div>
 
   <div class="match__score match__score--away">
     <i class="flag flag--{{ matchData.awayTeam | lowercase }}"></i>
-    <input type="text" class="match__score-field" ng-model="matchData.awayScore" ng-disabled="dataSubmitted">
+    <input type="text" class="match__score-field" ng-model="matchData.awayScore"  ng-disabled="dataSubmitted">
     <label class="match__label">{{ matchData.awayTeam }}</label>
   </div>
 
