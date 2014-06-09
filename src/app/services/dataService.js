@@ -6,6 +6,7 @@
 	.factory('dataService', function ($http, $q) {
 
 		var dataUrl = 'https://spreadsheets.google.com/feeds/list/1cYYbop7mOM153UWLCbIzKHfigrBAamHLfxFqleTpHag/od6/public/values?alt=json-in-script';
+    var apiUrl = 'http://boiling-mountain-6619.herokuapp.com/';
     var userData;
     var userVerified;
 
@@ -37,18 +38,19 @@
 				return callJsonp(dataUrl);
 			},
 
-      postData: function (data) {
+      postData: function (email, data) {
+        var formData = {formData: data};
 
-        for (var i = 0; i < data.length; i++) {
-          data[i].probWin = 50;
-          data[i].probDraw = 30;
-          data[i].probLose = 20;
-        }
-
-        // Fake post until we have backend in place...
-        var deferred = $q.defer();
-        deferred.resolve(data);
-        return deferred.promise;
+        return $http({
+          url: apiUrl + 'user/' + email,
+          method: 'POST',
+          data: JSON.stringify(formData),
+          headers: {'Content-Type': 'application/json'}
+        }).then(function (response) {
+          return response;
+        }, function (response) {
+          $q.reject(response);
+        });
       },
 
       storeUserData: function (data) {

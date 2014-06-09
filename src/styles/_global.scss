@@ -83,11 +83,14 @@ body {
 .matches-list {
   padding: 0;
   list-style: none;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .match-item {
   border: 1px solid #eee;
   display: inline-block;
+  margin: 26px 0 0;
 }
 
 .match {

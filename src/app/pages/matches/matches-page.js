@@ -69,7 +69,7 @@
         }
 
         // if this is the correct winner
-        if ((masterHomeScore > currentMasterMatch.awayScore) && (masterAwayScore > userAwayScore)) {
+        if ((userHomeScore > userAwayScore) && (masterHomeScore > masterAwayScore)) {
           $scope.points += 1;
           currentUserMatch.prediction = 'correct';
         }
@@ -114,7 +114,9 @@
 
     // Public method, available from the view
     $scope.save = function () {
-      dataService.postData($scope.matches).then(function(responseData) {
+      $scope.loading = true;
+      dataService.postData($state.params.email, $scope.matches).then(function(responseData) {
+        $scope.loading = false;
         $scope.dataSubmitted = true;
         angular.extend($scope.matches, responseData);
         // calculatePoints();
