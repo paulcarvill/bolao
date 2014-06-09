@@ -117,7 +117,7 @@
       dataService.postData($scope.matches).then(function(responseData) {
         $scope.dataSubmitted = true;
         angular.extend($scope.matches, responseData);
-        calculatePoints();
+        // calculatePoints();
       });
       return false;
     };
