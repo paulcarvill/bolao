@@ -10,9 +10,10 @@
       link: function(scope, element, attr, ctrl) {
 
         var value;
+        var valueHolder;
 
         var placehold = function () {
-          element.val(attr.placehold);
+          element.val(value);
         };
 
         var unplacehold = function () {
@@ -25,9 +26,8 @@
 
         element.bind('focus', function () {
           console.log('focus -> ');
-          if(value === '') {
-            unplacehold();
-          }
+          valueHolder = value;
+          unplacehold();
         });
 
         element.bind('blur', function () {

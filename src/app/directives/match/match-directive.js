@@ -8,7 +8,7 @@
 		return {
 			scope: {
 				matchData: '=matchData',
-        dataSubmitted: '=disabled'
+        worldCupStarted: '=disabled'
 			},
 
       templateUrl: 'app/directives/match/match-template.html'

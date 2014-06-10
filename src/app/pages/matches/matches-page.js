@@ -158,7 +158,6 @@
     } else {
       $state.go('login');
     }
-
   });
 
 })();
