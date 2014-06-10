@@ -25,7 +25,6 @@
         });
 
         element.bind('focus', function () {
-          console.log('focus -> ');
           valueHolder = value;
           unplacehold();
         });
