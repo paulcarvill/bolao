@@ -2,7 +2,11 @@
   <h1>Login</h1>
 
   <form class="login-form" ng-submit="validateEmail()">
-    <p class="login-form__invalid-email" ng-show="invalidEmail">This email address is not registered. Contact <a href="#">Pedro</a>, <a href="#">Dan Van</a> or <a href="#">Galvo</a></p>
+    <p class="login-form__invalid-email" ng-show="invalidEmail">
+      Send an email to <a href="mailto:pedro.duarte@rga.com">Pedro</a>, <a href="mailto:daniel.nieuwenhuizen@rga.com">Dan Van</a> or <a href="mailto:anthony.galvin@rga.com">Galvo</a> to get your email authorized. After that, you can just log-in and start your match predictions.
+    </p>
+
+
     <input type="email" placeholder="Enter your R/GA email address" ng-model="email" class="login-form__input" required>
     <button class="login-form__submit" ng-disabled="loading"><span ng-show="!loading">Login</span><span ng-show="loading">Loading</span></button>
   </form>

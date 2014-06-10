@@ -1,17 +1,18 @@
+<div class="loading" ng-show="fetchingData">Fetching data...</div>
 
-  <div class="loading" ng-show="fetchingData">Fetching data...</div>
+<h2 ng-show="!fetchingData">Enter your predictions below and press submit.<br>You can change them until the first match starts.
+</h2>
 
+<form class"matches-form" ng-submit="save()">
+  <ul class="matches-list">
+    <li class="match-item" ng-repeat="match in matches">
+      <div match match-data="match" disabled="worldCupStarted"></div>
+    </li>
+  </ul>
 
-  <form class"matches-form" ng-submit="save()">
-    <ul class="matches-list">
-      <li class="match-item" ng-repeat="match in matches">
-        <div match match-data="match" disabled="worldCupStarted"></div>
-      </li>
-    </ul>
+  <button ng-if="!worldCupStarted" ng-disabled="sendingData"><span ng-show="!sendingData">Samba & Submit</span><span ng-show="sendingData">Submitting...</span></button>
+</form>
 
-    <button ng-if="!worldCupStarted" ng-disabled="sendingData"><span ng-show="!sendingData">Samba & Submit</span><span ng-show="sendingData">Submitting...</span></button>
-  </form>
-
-  <div ng-show="points" class="points">
-    <p>Total points: {{ points }}</p>
-  </div>
+<div ng-show="points" class="points">
+  <p>Total points: {{ points }}</p>
+</div>
