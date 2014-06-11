@@ -32,6 +32,13 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
+h2 {
+  @include small-only {
+    font-size: 18px;
+    margin: 0 5%;
+  }
+}
+
 button {
   background: #0f9d58;
   border: none;
@@ -109,7 +116,13 @@ button {
 
 .login-form {
   max-width: 620px;
-  margin: 30px auto 120px;
+  margin: 30px 16px 120px;
+
+  @include medium {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
 .login-form__input {
