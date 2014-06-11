@@ -18,7 +18,7 @@
 
     function checkIfWorldCup () {
       // var worldCupStartDate = 1402325737 * 1000; // OLD DATE!!! FOR TESTING
-      var worldCupStartDate = 1402531200 * 1000; // 12th June 2014 00:00:00
+      var worldCupStartDate = 1402606800 * 1000; // 12th June 2014 21:00:00
       var todayDate = new Date().getTime();
       $rootScope.worldCupStarted = todayDate > worldCupStartDate ? true : false;
     }

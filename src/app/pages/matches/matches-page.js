@@ -35,8 +35,10 @@
       match.city = data.gsx$city.$t;
       match.stadium = data.gsx$stadium.$t;
       match.homeTeam = data.gsx$hometeam.$t;
+      match.homeTeamClass = match.homeTeam.toLowerCase().replace(/ /g, '-');
       match.homeScore = resetScores ? '-' : data.gsx$homescore.$t;
       match.awayTeam = data.gsx$awayteam.$t;
+      match.awayTeamClass = match.awayTeam.toLowerCase().replace(/ /g, '-');
       match.awayScore = resetScores ? '-' : data.gsx$awayscore.$t;
       match.group = data.gsx$group.$t;
 
