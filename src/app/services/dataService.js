@@ -77,12 +77,12 @@
       },
 
       validateEmail: function (email) {
-        return $http.get(apiUrl + 'login/' + email)
-          .then(function (response) {
-            return validateResponse(response);
-          }, function (response) {
-            return validateResponse(response);
-          });
+        return $http.get(apiUrl + 'login/' + email);
+      },
+
+      getPredictions: function () {
+        return $http.get(apiUrl + 'predictions/');
+        // return callJsonp(apiUrl + 'predictions');
       }
 
 		};

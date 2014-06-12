@@ -63,21 +63,30 @@
         currentUserMatch.actualAwayScore = masterAwayScore;
 
         // default
-        currentUserMatch.prediction = 'wrong';
+        currentUserMatch.status = 'wrong';
 
         // if this is an exact match
         if ((masterHomeScore === userHomeScore) && (masterAwayScore === userAwayScore) ) {
           $scope.points += 3;
-          currentUserMatch.prediction = 'exact';
+          currentUserMatch.status = 'exact';
 
         }
 
         // if this is the correct winner
         if ((userHomeScore > userAwayScore) && (masterHomeScore > masterAwayScore)) {
           $scope.points += 1;
-          currentUserMatch.prediction = 'correct';
+          currentUserMatch.status = 'correct';
         }
       }
+    }
+
+    function setPredictions () {
+      dataService.getPredictions().then(function (data) {
+        data = data.data;
+        for (var i = 0; i < $scope.matches.length; i++) {
+          $scope.matches[i].prediction = data[i];
+        }
+      });
     }
 
     function getMatchesData () {
@@ -115,6 +124,9 @@
             calculatePoints();
           }
         }
+
+        // Method to get predictions from backend
+        setPredictions();
 
         // stop the loader...
         $scope.fetchingData = false;

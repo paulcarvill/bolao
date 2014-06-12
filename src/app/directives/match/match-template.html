@@ -1,4 +1,4 @@
-<div class="match match--{{ matchData.prediction }} clear" ng-class="{ 'match--disabled': worldCupStarted }">
+<div class="match match--{{ matchData.status }} clear" ng-class="{ 'match--disabled': worldCupStarted }">
   <span class="match__date">{{ matchData.date }}</span>
 
   <div class="match__score match__score--home">
@@ -13,11 +13,13 @@
     <label class="match__label">{{ matchData.awayTeam }}</label>
   </div>
 
-  <p ng-show="matchData.actualHomeScore >= 0 && matchData.actualAwayScore >= 0">Actual score: {{ matchData.actualHomeScore }} - {{ matchData.actualAwayScore }}</p>
+  <p ng-show="matchData.actualHomeScore >= 0 && matchData.actualAwayScore >= 0" class="match__actual-score">Actual score<br> {{ matchData.actualHomeScore }} - {{ matchData.actualAwayScore }}</p>
 
-  <div class="probabilities">
-    <span class="prob-win" style="width: {{ matchData.probWin }}%"></span>
-    <span class="prob-draw" style="width: {{ matchData.probDraw }}%"></span>
-    <span class="prob-lose" style="width: {{ matchData.probLose }}%"></span>
-  </div>
+</div>
+
+<div ng-show="matchData.prediction.percentage" class="probabilities clear">
+  <h3>Bets so far</h3>
+  <span class="prob-win" style="width: {{ matchData.prediction.percentage.home }}%"></span>
+  <span class="prob-draw" style="width: {{ matchData.prediction.percentage.draws }}%"></span>
+  <span class="prob-lose" style="width: {{ matchData.prediction.percentage.away }}%"></span>
 </div>

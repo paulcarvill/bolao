@@ -16,14 +16,14 @@
 
 	.controller('MainController', function($rootScope, dataService) {
 
-    function checkIfWorldCup () {
+    function checkWorldCupStatus () {
       // var worldCupStartDate = 1402325737 * 1000; // OLD DATE!!! FOR TESTING
       var worldCupStartDate = 1402606800 * 1000; // 12th June 2014 21:00:00
       var todayDate = new Date().getTime();
       $rootScope.worldCupStarted = todayDate > worldCupStartDate ? true : false;
     }
 
-    checkIfWorldCup();
+    checkWorldCupStatus();
 
     // Subscribe to state change start
     // this will be fired every time user changes state
