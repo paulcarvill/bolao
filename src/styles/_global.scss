@@ -217,10 +217,6 @@ button {
     padding-bottom: 90px;
   }
 
-  @include wide {
-    padding-bottom: 120px;
-  }
-
 }
 
 .match__score-field {
@@ -274,8 +270,12 @@ button {
 }
 
 .match__actual-score {
+  width: 100%;
+  clear: both;
+  border-top: 1px solid #d3d3d3;
   position: relative;
-  top: -50px;
+  padding-top: 20px;
+  top: -30px;
   font-size: 22px;
 }
 
@@ -394,6 +394,13 @@ button {
   top: 20px;
   right: 20px;
   font-size: 24px;
+  padding: 20px;
+  background: #ffffff;
+  border-bottom: 4px solid #d3d3d3;
+
+  @include small-only {
+    display: none;
+  }
 }
 
 

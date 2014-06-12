@@ -1,9 +1,11 @@
 <div class="loading" ng-show="fetchingData">Fetching data...</div>
 
-<h2 ng-show="!fetchingData && !dataSubmitted">Enter your predictions below and press submit.<br>You can change them until the first match starts.
+<h2 ng-show="!fetchingData && !dataSubmitted && !worldCupStarted">Enter your predictions below and press submit.<br>You can change them until the first match starts.
 </h2>
 
 <h2 ng-show="dataSubmitted">Scores stored! You can update them until Kick Off. Then, come back to keep track.</h2>
+
+<h2 ng-show="!fetchingData && worldCupStarted">You scored a total of {{ points }} points!</h2>
 
 <form class"matches-form" ng-submit="save()">
   <ul class="matches-list">
