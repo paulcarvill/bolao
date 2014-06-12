@@ -57,6 +57,14 @@
         var userHomeScore = Number(currentUserMatch.homeScore);
         var userAwayScore = Number(currentUserMatch.awayScore);
 
+        // if the game hasnt been updated in the spreadsheet
+        // it will return NaN
+        // so here we are basically checking whether the game has
+        // been played or not and if it us, we stop the execution
+        if (isNaN(masterHomeScore) || isNaN(masterAwayScore)) {
+          return;
+        }
+
         // create new properties on the match object
         // so we can access it from the view
         currentUserMatch.actualHomeScore = masterHomeScore;
@@ -104,7 +112,7 @@
           _MASTERDATA.push(createMatchObject(matchesData[i]));
 
           // only push to $scope.matches if we dont have any
-          // user data already stored in dfgdataService
+          // user data already stored in dataService
           if (!dataService.getUserData()) {
             $scope.matches.push(createMatchObject(matchesData[i], true));
           }
