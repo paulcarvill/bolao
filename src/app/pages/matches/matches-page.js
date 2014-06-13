@@ -79,9 +79,8 @@
           currentUserMatch.status = 'exact';
 
         }
-
         // if this is the correct winner
-        if ((userHomeScore > userAwayScore) && (masterHomeScore > masterAwayScore)) {
+        else if ((userHomeScore > userAwayScore) && (masterHomeScore > masterAwayScore)) {
           $scope.points += 1;
           currentUserMatch.status = 'correct';
         }
