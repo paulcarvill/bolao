@@ -210,13 +210,8 @@ button {
 .match__score {
   float: left;
   width: 50%;
-  padding: 0 20px 60px;
+  padding: 0 20px 120px;
   position: relative;
-
-  @include medium {
-    padding-bottom: 90px;
-  }
-
 }
 
 .match__score-field {
@@ -273,10 +268,11 @@ button {
   width: 100%;
   clear: both;
   border-top: 1px solid #d3d3d3;
-  position: relative;
+  position: absolute;
   padding-top: 20px;
-  top: -30px;
+  bottom: 30px;
   font-size: 22px;
+  left: 0;
 }
 
 .match--wrong,
