@@ -79,6 +79,7 @@
           currentUserMatch.status = 'exact';
 
         }
+
         // if this is the correct winner
         else if ((userHomeScore > userAwayScore) && (masterHomeScore > masterAwayScore)) {
           $scope.points += 1;
@@ -125,6 +126,15 @@
           // in this case, we set $scope.matches to be the users data
           // as this is what is bound with our views
           $scope.matches = dataService.getUserData();
+
+          // This is to fix an old bug which saved the wrong data
+          // to the database........
+          if (!$scope.matches.homeTeamClass && !$scope.matches.awayTeamClass) {
+            for (var j = 0; j < $scope.matches.length; j++) {
+              $scope.matches[j].homeTeamClass = $scope.matches[j].homeTeam.toLowerCase().replace(/ /g, '-');
+              $scope.matches[j].awayTeamClass = $scope.matches[j].awayTeam.toLowerCase().replace(/ /g, '-');
+            }
+          }
 
           // Check whether the worldcup has already started
           if ($rootScope.worldCupStarted) {
