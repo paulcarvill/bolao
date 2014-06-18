@@ -80,8 +80,10 @@
 
         }
 
-        // if this is the correct winner
-        else if ((userHomeScore > userAwayScore) && (masterHomeScore > masterAwayScore)) {
+        // if this is the correct winner, or a draw
+        else if ( ((userHomeScore < userAwayScore) && (masterHomeScore < masterAwayScore)) ||
+          ((userHomeScore > userAwayScore) && (masterHomeScore > masterAwayScore)) ||
+          ((userHomeScore === userAwayScore) && (masterHomeScore === masterAwayScore)) ) {
           $scope.points += 1;
           currentUserMatch.status = 'correct';
         }
